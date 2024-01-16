@@ -34,15 +34,11 @@ public class Ex03_Fullage {
 		}
 		System.out.println("만나이: " + age);
 		
-		// Refactoring
+		
 		int age2 = year - bYear;
 		if (month < bMonth || (month == bMonth && day < bDay))
 			age2--;
 		System.out.println("만나이: " + age2);
-		
-		int age3 = (month < bMonth || (month == bMonth && day < bDay)) ? 
-					year - bYear - 1 : year - bYear;
-		System.out.println("만나이: " + age3);
 	}
 
 }
