@@ -18,8 +18,8 @@ public class Q1_Cashmain {
 		for (int i = 1; i < Integer.MAX_VALUE; i++) {
 			if (!CA.ride())
 				break;
-	//		System.out.print(i + "회 탑승후 ");
-//			System.out.println(CA);
+		System.out.print(i + "회 탑승후 ");
+		System.out.println(CA);
 		}
 
 	}
