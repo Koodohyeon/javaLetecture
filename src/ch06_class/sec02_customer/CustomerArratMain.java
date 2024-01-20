@@ -15,7 +15,7 @@ public class CustomerArratMain {
 	
 		for (int i = 0; i < customers.length; i++)
 			System.out.println(customers[i]);
-		for (Customer customer: customers)
+		for (Customer customer: Customers2)
 			System.out.println(customer);
 	}
 
