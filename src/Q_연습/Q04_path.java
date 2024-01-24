@@ -7,7 +7,10 @@ public class Q04_path {
 		String[] pathArr = path.split("//");
 		String filename = pathArr[pathArr.length - 1];
 		System.out.println(filename);
-		
+
+		System.out.println(8 % 5);
 	}
+	
+	
 
 }
