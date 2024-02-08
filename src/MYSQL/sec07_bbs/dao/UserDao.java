@@ -1,4 +1,4 @@
-package MYSQL.sec06_user;
+package MYSQL.sec07_bbs.dao;
 
 import java.io.FileInputStream;	
 import java.sql.Connection;
@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import MYSQL.sec07_bbs.entity.User;
+
 public class UserDao {
 	private String connStr;
 	private String user;
@@ -17,7 +19,7 @@ public class UserDao {
 	private Connection conn;
 	
 	public UserDao() {
-		String path = "/Users/gudohyeon/eclipse-workspace/lesson/src/MYSQL/mysql.properties";
+		String path = "/Users/gudohyeon/eclipse-workspace/lesson/src/MYSQL/sec07_bbs/mysql.properties";
 		try {
 			Properties prop = new Properties();
 			prop.load(new FileInputStream(path));
@@ -42,12 +44,12 @@ public class UserDao {
 		}
 	}
 	
-	public User getUserBYUid(String uid) {
+	public User getUserBYUid(String Uid) {
 		String sql = "select * from users where uid=?";
 		User user = new User();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, uid);
+			pstmt.setString(1, Uid);
 			
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -72,8 +74,8 @@ public class UserDao {
 			
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
-				User user = new User(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						LocalDate.parse(rs.getString(5)), rs.getInt(6));
+				User user = new User(rs.getString(1), rs.getString(2), rs.getString(3), 
+								rs.getString(4), LocalDate.parse(rs.getString(5)), rs.getInt(6));
 				list.add(user);
 			}
 			rs.close(); pstmt.close();
